@@ -2,9 +2,8 @@ import jwt from "jsonwebtoken";
 
 
 const SECRET_KEY = process.env.JWT_SECRET;
-
 export function generatejwt(user_id, email) {
-  return jwt.sign({ user_id, email }, "SECRET_KEY", {
+  return jwt.sign({ user_id, email }, SECRET_KEY, {
     expiresIn: "3h",
   });
 }

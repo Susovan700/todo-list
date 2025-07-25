@@ -6,7 +6,7 @@ const todoSchema = new mongoose.Schema({
     ref: "User",
     required: true
   },
-  title: {
+  text: {
     type: String,
     required: true
   },

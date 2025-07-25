@@ -82,7 +82,7 @@ export async function updateTodo(req, res) {
 // PUT mark as complete
 export async function completeTodo(req, res) {
   const { id } = req.params;
-
+  
   try {
     const updated = await Todo.findOneAndUpdate(
       { _id: id, userId: req.user.user_id },

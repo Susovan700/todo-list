@@ -1,7 +1,8 @@
 import { verifyjwt } from "../Util/jwtutil.js";
 
 const AuthMiddleware = async (req, res, next) => {
-  const token = req.headers.authorization;
+  const Rawtoken = req.headers.authorization;
+  const token = Rawtoken.replace("Bearer ", "");
 
   if (!token) {
     return res.status(401).json({ message: "Token Missing" });

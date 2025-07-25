@@ -1,6 +1,6 @@
 import User from "../Model/UserModel.js";
 import bcrypt from "bcrypt";
-import { generatejwt } from "../util/jwtutil.js";
+import { generatejwt } from "../Util/jwtutil.js";
 
 export async function loginUser(req, res) {
   const { email, password } = req.body;
@@ -20,7 +20,7 @@ export async function loginUser(req, res) {
   }
 }
 export async function registerUser(req, res) {
-  const { username, email, password } = req.body; // ← include username
+  const { username, email, password } = req.body;
   try {
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -28,7 +28,7 @@ export async function registerUser(req, res) {
     }
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await User.create({
-      username,  // ← add this
+      username,
       email,
       password: hashedPassword,
     });
