@@ -1,0 +1,494 @@
+/* register.module.css - Complete CSS file for register page */
+
+/* Main container styles */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 50%, #f3f4f6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Header section */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  margin: 0;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Card container */
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid #f3f4f6;
+  padding: 2rem;
+}
+
+/* Error banner */
+.errorBanner {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.errorBanner.show {
+  display: flex;
+}
+
+.errorIcon {
+  width: 20px;
+  height: 20px;
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+.errorText {
+  color: #b91c1c;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Form styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+/* Input wrapper and styles */
+.inputWrapper {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #9ca3af;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: white;
+  color: #000;
+  box-sizing: border-box;
+}
+/* Autofill fix for email, password, and other inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: #fff !important;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #000 !important;
+  color: #000 !important;
+  transition: background-color 9999s ease-out, color 9999s ease-out;
+}
+
+
+.input:hover {
+  border-color: #9ca3af;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input.error {
+  border-color: #f87171;
+  background: #fef2f2;
+}
+
+.inputPassword {
+  padding-right: 48px;
+}
+
+/* Password toggle button */
+.passwordToggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #9ca3af;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.passwordToggle:hover {
+  color: #6b7280;
+}
+
+.passwordToggleIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Field error styles */
+.fieldError {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #dc2626;
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.fieldError.show {
+  display: flex;
+}
+
+.fieldErrorIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Password strength indicator */
+.passwordStrength {
+  margin-top: 0.5rem;
+}
+
+.strengthHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.strengthLabel {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.strengthValue {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.strengthBar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.strengthFill {
+  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  width: 0%;
+}
+
+/* Password strength color classes */
+.strengthWeak { 
+  color: #dc2626; 
+}
+
+.strengthFair { 
+  color: #ea580c; 
+}
+
+.strengthGood { 
+  color: #ca8a04; 
+}
+
+.strengthStrong { 
+  color: #2563eb; 
+}
+
+.strengthVeryStrong { 
+  color: #16a34a; 
+}
+
+.strengthFill.weak { 
+  background: #ef4444; 
+}
+
+.strengthFill.fair { 
+  background: #f97316; 
+}
+
+.strengthFill.good { 
+  background: #eab308; 
+}
+
+.strengthFill.strong { 
+  background: #3b82f6; 
+}
+
+.strengthFill.veryStrong { 
+  background: #22c55e; 
+}
+
+/* Submit button */
+.submitBtn {
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transform: scale(1);
+  min-height: 48px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #6d28d9);
+  transform: scale(1.02);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+
+.submitBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Loading spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+/* Footer section */
+.footer {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.footerText {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.footerLink {
+  color: #2563eb;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  font-size: inherit;
+}
+
+.footerLink:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.footerLink:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+/* Security note */
+.securityNote {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.securityText {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Utility classes */
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: flex !important;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .container {
+    padding: 0.5rem;
+  }
+  
+  .wrapper {
+    max-width: 100%;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
+  
+  .input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .logo {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .logoIcon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Focus styles for accessibility */
+.input:focus,
+.passwordToggle:focus,
+.submitBtn:focus,
+.footerLink:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .input {
+    border-width: 2px;
+  }
+  
+  .submitBtn {
+    border: 2px solid transparent;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .submitBtn,
+  .passwordToggle,
+  .strengthFill,
+  .spinner {
+    transition: none;
+    animation: none;
+  }
+  
+  .submitBtn:hover:not(:disabled) {
+    transform: none;
+  }
+  
+  .submitBtn:active:not(:disabled) {
+    transform: none;
+  }
+}

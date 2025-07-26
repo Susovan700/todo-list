@@ -155,7 +155,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2024 TodoMaster. Built with ❤️ for productivity enthusiasts.</p>
+          <p>&copy; 2025 TodoMaster. Built with ❤️ for productivity enthusiasts.</p>
         </div>
       </footer>
     </div>
